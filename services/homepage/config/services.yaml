@@ -1,0 +1,34 @@
+- Dienste:
+    - OpenCloud:
+        icon: owncloud.png
+        href: https://14fgwxfa0pcyfqpn.myfritz.net
+        description: Cloud-Speicher & Office
+        server: my-docker
+        container: opencloud
+
+    - VaultWarden:
+        icon: bitwarden.png
+        href: https://14fgwxfa0pcyfqpn.myfritz.net:8443
+        description: Passwortmanager
+        server: my-docker
+        container: vaultwarden
+
+    - Caddy:
+        icon: caddy.png
+        description: Reverse Proxy
+        server: my-docker
+        container: caddy
+
+- Backup:
+    - BorgBackup Status:
+        icon: mdi-backup-restore
+        description: Letztes Backup
+        widget:
+          type: customapi
+          url: http://localhost:3001/backup-status
+          refreshInterval: 3600000
+          mappings:
+            - field: last_backup
+              label: Letztes Backup
+            - field: status
+              label: Status

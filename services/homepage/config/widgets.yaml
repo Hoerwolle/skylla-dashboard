@@ -1,0 +1,13 @@
+- resources:
+    label: System
+    cpu: true
+    memory: true
+    disk: /app/config
+    diskUnits: gigabytes
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
+      dateStyle: short
+      hourCycle: h23
