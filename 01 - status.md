@@ -15,7 +15,7 @@ Lokales Web-Dashboard auf Skylla (Ninkear N10 Mini-PC) – erreichbar unter `htt
 | **Dienst-Links** | ✅ Läuft | OpenCloud, VaultWarden, Caddy |
 | **Docker-Container Status** | ✅ Läuft | Grün/Rot pro Container |
 | **System-Metriken** | ✅ Läuft | CPU, RAM, USB-Stick-Füllstand |
-| **Backup-Status** | ⬜ Ausstehend | Letzter BorgBackup-Lauf – wird nach Phase 6 ergänzt |
+| **Backup-Status** | ✅ Läuft | Letzter BorgBackup-Lauf – wird nach Phase 6 ergänzt |
 
 ---
 
