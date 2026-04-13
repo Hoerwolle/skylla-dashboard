@@ -11,13 +11,33 @@ Das Dashboard verwendet [Homepage](https://gethomepage.dev), ein Docker-natives 
 ### Abgefragte lokale Dienste
 
 1. **Immich**: Foto-Backup und -verwaltung
+   - API-Endpoint: `http://immich-server:2283/api/server/statistics`
+   - Anzeige: Anzahl der Fotos und Videos
+
 2. **OpenCloud**: Cloud-Speicher & Office
+   - Docker-Container: `opencloud`
+
 3. **VaultWarden**: Passwortmanager
+   - Docker-Container: `vaultwarden`
+
 4. **Caddy**: Reverse Proxy
+   - Docker-Container: `caddy`
+
 5. **Scuttle**: Selbstgehostete Social-Media-Alternative
+   - API-Endpoint: `http://scuttle/api.php?action=count`
+   - Anzeige: Anzahl der gespeicherten Links
+
 6. **SpritpreisTracker**: Tracking von Spritpreisen
+   - API-Endpoint: `http://host.docker.internal:5000/api/cheapest`
+   - Anzeige: Günstigster E10-Preis und Tankstelle
+   - Docker-Container: `spritpreis-tracker`
+
 7. **Backup**: BorgBackup-Status
+   - API-Endpoint: `http://host.docker.internal:3001/backup-status.json`
+   - Anzeige: Zeitpunkt des letzten Backups
+
 8. **Server-Daten**: CPU, RAM, Speicherplatz
+   - System-Metriken des Hosts
 
 ## Dateien
 
@@ -28,6 +48,7 @@ Das Dashboard verwendet [Homepage](https://gethomepage.dev), ein Docker-natives 
 | [Homepage-Docker-Compose.md](Homepage-Docker-Compose.md) | Docker-Compose-Konfiguration |
 | [Homepage-Backup-Status.md](Homepage-Backup-Status.md) | Backup-Status-Widget-Einrichtung |
 | [Status-Page.md](Status-Page.md) | Gesamtanleitung und Schritte |
+| [services/homepage/config/services.yaml](services/homepage/config/services.yaml) | Dienst-Konfiguration inkl. SpritpreisTracker |
 
 ## Einrichtung
 

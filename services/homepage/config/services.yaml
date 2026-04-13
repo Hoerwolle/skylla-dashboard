@@ -1,4 +1,24 @@
 - Dienste:
+    - Immich:
+        icon: immich.png
+        href: https://14fgwxfa0pcyfqpn.myfritz.net:9443
+        description: Foto-Backup (Google Photos Ersatz)
+        server: my-docker
+        container: immich-server
+        widget:
+          type: customapi
+          url: http://immich-server:2283/api/server/statistics
+          headers:
+            x-api-key: zsUJkBJgDRjpdmXDii3FSZr8uBDH9hJmUz9Utgl0eo
+          refreshInterval: 300000
+          mappings:
+            - field: photos
+              label: Fotos
+              format: number
+            - field: videos
+              label: Videos
+              format: number
+
     - OpenCloud:
         icon: owncloud.png
         href: https://14fgwxfa0pcyfqpn.myfritz.net
@@ -19,13 +39,46 @@
         server: my-docker
         container: caddy
 
+    - Scuttle:
+        icon: mdi-bookmark-plus
+        href: https://14fgwxfa0pcyfqpn.myfritz.net:7443
+        description: Link Saver
+        server: my-docker
+        container: scuttle
+        widget:
+          type: customapi
+          url: http://scuttle/api.php?action=count
+          refreshInterval: 300000
+          mappings:
+            - field: data.count
+              label: Links gespeichert
+              format: number
+
+    - SpritpreisTracker:
+        icon: mdi-gas-station
+        href: http://192.168.178.101:5000
+        description: E10 Preismonitor Würselen
+        server: my-docker
+        container: spritpreis-tracker
+        widget:
+          type: customapi
+          url: http://host.docker.internal:5000/api/cheapest
+          refreshInterval: 900000
+          mappings:
+            - field: e10_display
+              label: E10 günstigster Preis
+              format: text
+            - field: station
+              label: Tankstelle
+              format: text
+
 - Backup:
-    - BorgBackup Status:
+    - BorgBackup:
         icon: mdi-backup-restore
         description: Letztes Backup
         widget:
           type: customapi
-          url: http://localhost:3001/backup-status
+          url: http://host.docker.internal:3001/backup-status.json
           refreshInterval: 3600000
           mappings:
             - field: last_backup
